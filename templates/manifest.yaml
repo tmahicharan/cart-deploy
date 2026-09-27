@@ -33,7 +33,7 @@ spec:
     spec:
       containers:
       - name: cart
-        image: "{{ .values.owner.imageRepo }}:{{ .Values.owner.imageversion }}"
+        image: "{{ .Values.owner.imageRepo }}:{{ .Values.owner.imageversion }}"
         imagePullPolicy: Always
         envFrom:
         - configMapRef:
@@ -66,7 +66,7 @@ spec:
    project: roboshop
   ports:
     - protocol: TCP
-      port: {{ .Values.service.servicePort }}
+      port: "{{ .Values.service.servicePort }}"
       targetPort: 8080
 
  
